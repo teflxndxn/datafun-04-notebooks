@@ -23,3 +23,33 @@ to get these projects running on your machine.
   - [RESOURCES.md](./module/RESOURCES.md)
   - [seaborn-datasets.md](./module/seaborn-datasets.md)
   - [TROUBLESHOOTING.md](./module/TROUBLESHOOTING.md)
+
+## Custom Project
+
+### Dataset
+
+This project uses the Palmer Penguins dataset provided through Seaborn. The dataset contains information about penguin species, including bill length, bill depth, flipper length, body mass, sex, and island location. The dataset is commonly used for exploratory data analysis and visualization practice.
+
+### Signals
+
+The primary signals used in this project were:
+
+* Species
+* Body Mass (g)
+* Flipper Length (mm)
+* Bill Length (mm)
+* Bill Depth (mm)
+
+A custom signal was created by calculating the average body mass for each penguin species.
+
+### Experiments
+
+I modified the original example project by creating a custom notebook (`eda_blessing.ipynb`) and a custom Python application (`app_blessing.py`). I added a new analysis that groups penguins by species and calculates the average body mass. I then created a bar chart to visualize the differences among species.
+
+### Results
+
+The analysis showed that Gentoo penguins have the highest average body mass, while Adelie and Chinstrap penguins have similar average body masses. The custom visualization made these differences easy to identify and compare.
+
+### Interpretation
+
+The results indicate that penguin species is strongly associated with body mass. Gentoo penguins are significantly larger than the other species in the dataset. From a business intelligence perspective, grouping and visualizing data can reveal patterns that are difficult to identify from raw tables alone. Visual analytics helps decision-makers quickly understand differences between categories and supports data-driven decision making.
