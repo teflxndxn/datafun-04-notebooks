@@ -422,6 +422,22 @@ From this heatmap, we can see that flipper_length_mm and body_mass_g show strong
 
 
 # === Section 8. Create Visualizations ===
+def average_body_mass_by_species(df_clean: pd.DataFrame) -> None:
+    """Create a bar chart showing average body mass by species."""
+
+    LOG.info("Creating average body mass chart by species")
+
+    avg_mass = df_clean.groupby("species")["body_mass_g"].mean()
+
+    plt.figure()
+
+    avg_mass.plot(
+        kind="bar",
+        title="Average Body Mass by Species",
+    )
+
+    plt.xlabel("Species")
+    plt.ylabel("Average Body Mass (g)")
 
 
 def make_plots(df_clean: pd.DataFrame) -> None:
@@ -574,6 +590,8 @@ def main() -> None:
 
     LOG.info("--- Section 8: Charts ---")
     make_plots(df_clean)
+    LOG.info("--- Custom Analysis ---")
+    average_body_mass_by_species(df_clean)
 
     LOG.info("--- Section 9: Summary and next steps ---")
     summarize(df, df_clean)
